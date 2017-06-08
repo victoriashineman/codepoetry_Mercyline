@@ -6,3 +6,4 @@ gen lwage=log(wage)
 ** Wu version of Hausman test ** quietly reg educ age married smsa nearc2 nearc4 predict educhat,xb reg lwage educ age married smsa educhat  
 ** overidentification test ** quietly reg ivresid age married smsa nearc2 nearc4 predict explresid,xb matrix accum rssmat = explresid,noconstant matrix accum tssmat = ivresid,noconstant scalar nobs=e(N) scalar x2=nobs*rssmat[1,1]/tssmat[1,1] scalar pval=1-chi2(1,x2) scalar list x2 pval  
 log close
+close
